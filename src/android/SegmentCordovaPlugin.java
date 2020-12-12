@@ -25,6 +25,8 @@ import java.util.Locale;
 import java.util.Map;
 
 import com.segment.analytics.android.integrations.appboy.AppboyIntegration;
+import com.segment.analytics.android.integrations.firebase.FirebaseIntegration;
+
 
 public class SegmentCordovaPlugin extends CordovaPlugin {
 
@@ -137,7 +139,8 @@ public class SegmentCordovaPlugin extends CordovaPlugin {
                     }
                     // middleware, connectionFactory, optOut are not currently supported.
                 }
-
+                //added by rkd 13dec2020
+                builder.use(FirebaseIntegration.FACTORY);
                 Analytics analytics = builder.build();
                 // Set the initialized instance as a globally accessible instance.
                 Analytics.setSingletonInstance(analytics);
