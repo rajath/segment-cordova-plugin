@@ -25,9 +25,9 @@ import java.util.Locale;
 import java.util.Map;
 
 import com.segment.analytics.android.integrations.appboy.AppboyIntegration;
-//firebase integration
+//firebase integration - 05dec
 import com.segment.analytics.android.integrations.firebase.FirebaseIntegration;
-//webengage integration
+//webengage integration - 21dec
 import com.webengage.sdk.android.integrations.segment.WebEngageIntegration;
 
 
