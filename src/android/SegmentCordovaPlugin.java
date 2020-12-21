@@ -25,7 +25,11 @@ import java.util.Locale;
 import java.util.Map;
 
 import com.segment.analytics.android.integrations.appboy.AppboyIntegration;
+//firebase integration
 import com.segment.analytics.android.integrations.firebase.FirebaseIntegration;
+//webengage integration
+import com.webengage.sdk.android.integrations.segment.WebEngageIntegration;
+
 
 
 public class SegmentCordovaPlugin extends CordovaPlugin {
@@ -140,8 +144,11 @@ public class SegmentCordovaPlugin extends CordovaPlugin {
                     // middleware, connectionFactory, optOut are not currently supported.
                 }
                 //added by rkd 13dec2020
+                //firebase and webengage
                 builder.use(FirebaseIntegration.FACTORY);
+                builder.use(WebEngageIntegration.FACTORY);
                 Analytics analytics = builder.build();
+                
                 // Set the initialized instance as a globally accessible instance.
                 Analytics.setSingletonInstance(analytics);
 
