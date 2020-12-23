@@ -29,6 +29,9 @@ import com.segment.analytics.android.integrations.appboy.AppboyIntegration;
 import com.segment.analytics.android.integrations.firebase.FirebaseIntegration;
 //webengage integration - 21dec
 import com.webengage.sdk.android.integrations.segment.WebEngageIntegration;
+//amplitude integration - 22 dec
+import com.segment.analytics.android.integrations.amplitude.AmplitudeIntegration;
+
 
 
 
@@ -143,10 +146,10 @@ public class SegmentCordovaPlugin extends CordovaPlugin {
                     }
                     // middleware, connectionFactory, optOut are not currently supported.
                 }
-                //added by rkd 13dec2020
-                //firebase and webengage
-                builder.use(FirebaseIntegration.FACTORY);
+               
                 builder.use(WebEngageIntegration.FACTORY);
+                builder.use(AmplitudeIntegration.FACTORY);
+                builder.use(FirebaseIntegration.FACTORY);
                 Analytics analytics = builder.build();
                 
                 // Set the initialized instance as a globally accessible instance.
